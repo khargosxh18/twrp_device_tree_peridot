@@ -10,7 +10,6 @@ allow recovery {
     authorization_service
     apc_service
     secure_element_service
-    default_android_service
     hal_bootctl_service
     hal_gatekeeper_service
     hal_health_service
@@ -136,3 +135,5 @@ allow recovery {
     bt_firmware_file
     vendor_firmware_file
 }:file { getattr open read };
+
+allow recovery hal_vibrator_service:service_manager add;
