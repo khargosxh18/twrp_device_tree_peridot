@@ -18,6 +18,9 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
+# OrangeFox maintainer
+OF_MAINTAINER := Khargosxh18
+
 # screen settings
 # e.g. if the aspect ratio is 19:9 then use 19*120 (=2280)
 OF_SCREEN_H := 2400
