@@ -113,3 +113,26 @@ allow recovery {
 allow recovery {
     shared_relro_file shortcut_manager_icons system_ndebug_socket system_unsolzygote_socket
 }:{ file sock_file } getattr;
+
+type vendor_persist_time_file, file_type;
+type adsprpcd_file, file_type;
+type firmware_file, file_type;
+type bt_firmware_file, file_type;
+type vendor_firmware_file, file_type;
+
+# Grant recovery access to read these newly defined types
+allow recovery {
+    vendor_persist_time_file
+    adsprpcd_file
+    firmware_file
+    bt_firmware_file
+    vendor_firmware_file
+}:dir { getattr search open read };
+
+allow recovery {
+    vendor_persist_time_file
+    adsprpcd_file
+    firmware_file
+    bt_firmware_file
+    vendor_firmware_file
+}:file { getattr open read };
